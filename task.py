@@ -20,7 +20,10 @@ def is_objects_same_type(first, second):
     In another case should return False
     """
 
-    pass
+    if type(first) == type(second):
+        return True
+    else:
+        return False
     
 
 def is_objects_the_same(first, second):
@@ -29,7 +32,10 @@ def is_objects_the_same(first, second):
     In another case should return False
     """
 
-    pass
+    if first is second:
+        return True
+    else:
+        return False
 
 def multiple_ints(first_value, second_value):
     """
@@ -44,7 +50,10 @@ def multiple_ints(first_value, second_value):
         Product of elements
     """
 
-    pass
+    if isinstance(first_value, int) and isinstance(second_value, int):
+        return first_value * second_value
+    else:
+        raise ValueError
 
 
 def multiple_ints_with_conversion(first_value, second_value):
@@ -71,7 +80,12 @@ def multiple_ints_with_conversion(first_value, second_value):
         >>> "Not valid input data"
     """
 
-    pass
+    try: 
+        first_value = int(first_value)
+        second_value = int(second_value)
+        return multiple_ints(first_value, second_value)
+    except:
+        raise ValueError
 
 def is_word_in_text(word, text):
     """
@@ -87,7 +101,10 @@ def is_word_in_text(word, text):
         >>> False
     """
 
-    pass
+    if word in text:
+        return True
+    else:
+        return False
 
 def some_loop_exercise():
     """
