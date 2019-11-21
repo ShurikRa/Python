@@ -141,8 +141,12 @@ def alphabet():
         alphabet()
         >>> {1: "a", 2: "b" ...}
     """
+    alphabet = {}
+    for number in range(97, 123):
 
-    pass
+        alphabet.update({number-96: chr(number)})
+
+    return alphabet 
 
 
 def simple_sort(data):
@@ -154,4 +158,13 @@ def simple_sort(data):
     Returns:
     """
 
-    pass
+    for i in range(len(data)):
+        min_i = i
+        for ii in range(i+1, len(data)):
+            if data[min_i] < data[ii]:
+                min_i = ii
+        data[i], data[min_i] = data[min_i], data[i]
+
+    return data
+
+print(simple_sort([100, -9, 50.0, 7.744, 33, "Gopa", 1]))
